@@ -1,0 +1,17 @@
+# Resume Ranking System - Required Python Packages
+# Install all packages using: pip install -r requirements.txt
+
+# Core NLP and ML libraries
+scikit-learn>=1.3.0
+nltk>=3.8.0
+
+# Data manipulation and analysis
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Optional: For handling PDF resumes (uncomment if needed)
+# PyMuPDF>=1.23.0
+# pdfminer.six>=20221105
+
+# Optional: For web interface (uncomment if implementing Streamlit UI)
+# streamlit>=1.28.0

@@ -1,0 +1,81 @@
+MICHAEL CHEN
+Email: michael.chen@email.com | Phone: (555) 246-8135
+LinkedIn: linkedin.com/in/michaelchen | Portfolio: michaelchen-analytics.com
+
+PROFESSIONAL SUMMARY
+Detail-oriented Data Analyst with 3+ years of experience in statistical analysis, data visualization, and business intelligence. Proficient in Python, SQL, and various data analysis tools. Strong ability to translate complex data into actionable business insights.
+
+TECHNICAL SKILLS
+Programming: Python, SQL, R
+Data Analysis: Pandas, NumPy, Excel (Advanced), Statistical Analysis
+Visualization: Tableau, Power BI, Matplotlib, Seaborn, Plotly
+Databases: MySQL, PostgreSQL, SQL Server
+Tools: Jupyter Notebook, Git, Google Analytics, SPSS
+Statistics: Hypothesis Testing, Regression Analysis, A/B Testing
+
+PROFESSIONAL EXPERIENCE
+
+Data Analyst
+InsightCorp, Seattle, WA | January 2022 - Present
+- Analyze large datasets using Python (Pandas, NumPy) to identify trends and patterns
+- Create comprehensive data visualizations and dashboards in Tableau for executive reporting
+- Perform statistical analysis including regression, correlation, and hypothesis testing
+- Collaborate with product and marketing teams to optimize business strategies
+- Develop SQL queries to extract and manipulate data from multiple database sources
+- Automated monthly reporting processes, reducing reporting time by 60%
+- Conduct A/B testing analysis to evaluate marketing campaign effectiveness
+
+Junior Data Analyst
+DataVision Solutions, Portland, OR | July 2020 - December 2021
+- Performed exploratory data analysis on customer behavior datasets
+- Built interactive dashboards using Power BI for sales and operations teams
+- Cleaned and preprocessed data to ensure quality and accuracy
+- Wrote Python scripts to automate data collection and transformation tasks
+- Assisted in developing predictive models for customer segmentation
+- Generated regular reports on key performance indicators
+
+Business Intelligence Intern
+TechAnalytics Inc., San Francisco, CA | Summer 2020
+- Supported data analysis projects using Excel and SQL
+- Created data visualizations to communicate findings to stakeholders
+- Assisted in database maintenance and data quality assurance
+- Learned foundational machine learning concepts and applications
+
+EDUCATION
+Bachelor of Science in Statistics
+University of Washington | 2020
+- Minor in Computer Science
+- GPA: 3.6/4.0
+- Relevant Coursework: Statistical Methods, Data Mining, Database Systems, Python Programming
+
+PROJECTS
+Sales Forecasting Dashboard
+- Developed an interactive Tableau dashboard for sales trend analysis and forecasting
+- Utilized Python for data preprocessing and feature engineering
+- Implemented time series analysis techniques
+
+Customer Churn Analysis
+- Analyzed customer data to identify factors contributing to churn
+- Built predictive models using Python and scikit-learn
+- Presented findings and recommendations to management team
+
+COVID-19 Data Visualization
+- Created comprehensive visualizations of COVID-19 trends using Python (Matplotlib, Plotly)
+- Performed statistical analysis on infection rates and vaccination data
+- Published findings on personal portfolio website
+
+CERTIFICATIONS
+- Google Data Analytics Professional Certificate
+- Microsoft Certified: Data Analyst Associate
+- Tableau Desktop Specialist
+
+ADDITIONAL SKILLS
+- Strong problem-solving and analytical thinking
+- Excellent communication and presentation skills
+- Experience with Agile methodology
+- Team collaboration and cross-functional coordination
+
+PROFESSIONAL DEVELOPMENT
+- Completed online courses in Machine Learning Basics (Coursera, 2023)
+- Attended Data Science Conference 2022 and 2023
+- Active member of local Python User Group

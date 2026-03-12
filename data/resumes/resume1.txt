@@ -1,0 +1,57 @@
+JOHN SMITH
+Email: john.smith@email.com | Phone: (555) 123-4567
+LinkedIn: linkedin.com/in/johnsmith | GitHub: github.com/johnsmith
+
+PROFESSIONAL SUMMARY
+Experienced Python Developer with 4+ years of expertise in Machine Learning and Data Analysis. Proven track record of developing and deploying ML models for real-world applications. Strong background in statistical analysis, deep learning, and natural language processing.
+
+TECHNICAL SKILLS
+Programming Languages: Python, SQL, Java, JavaScript
+ML Frameworks: TensorFlow, PyTorch, scikit-learn, Keras
+Data Analysis: Pandas, NumPy, SciPy, Matplotlib, Seaborn
+NLP Libraries: NLTK, spaCy, Hugging Face Transformers
+Databases: MySQL, PostgreSQL, MongoDB
+Cloud Platforms: AWS (SageMaker, EC2, S3), Google Cloud Platform
+Tools: Git, Docker, Jupyter Notebook, Apache Spark
+
+PROFESSIONAL EXPERIENCE
+
+Senior Python Developer - Machine Learning
+DataTech Solutions, San Francisco, CA | June 2021 - Present
+- Developed and deployed 15+ machine learning models for customer churn prediction, sentiment analysis, and recommendation systems
+- Built end-to-end data analysis pipelines processing 10M+ records daily using Python and Pandas
+- Implemented deep learning models using TensorFlow and PyTorch, achieving 92% accuracy
+- Collaborated with cross-functional teams to integrate ML solutions into production systems
+- Optimized model performance through hyperparameter tuning and feature engineering
+- Created interactive data visualizations and dashboards for stakeholders
+
+Python Developer - Data Science
+Analytics Corp, Boston, MA | July 2019 - May 2021
+- Designed and implemented predictive models for sales forecasting using scikit-learn
+- Performed statistical analysis on large datasets to identify business trends
+- Developed NLP solutions for text classification and named entity recognition
+- Automated data extraction and transformation processes using Python scripts
+- Worked with SQL databases to query and analyze structured data
+
+EDUCATION
+Master of Science in Computer Science (AI/ML Specialization)
+Stanford University | 2019
+- Relevant Coursework: Machine Learning, Deep Learning, Natural Language Processing, Statistical Methods
+
+Bachelor of Science in Computer Science
+University of California, Berkeley | 2017
+- GPA: 3.8/4.0
+
+PROJECTS
+- Customer Sentiment Analysis System: Built an NLP-based sentiment analysis tool using transformers and Python, achieving 89% accuracy on customer reviews
+- Real-time Fraud Detection: Developed a machine learning model for detecting fraudulent transactions with 95% precision
+- Image Classification App: Created a deep learning application using CNN and TensorFlow for classifying medical images
+
+CERTIFICATIONS
+- AWS Certified Machine Learning - Specialty
+- TensorFlow Developer Certificate
+- Python for Data Science and Machine Learning (Coursera)
+
+PUBLICATIONS
+- "Advanced Techniques in Natural Language Processing" - AI Conference 2022
+- "Optimizing Machine Learning Models for Production" - Data Science Journal 2021

@@ -1,0 +1,46 @@
+╔══════════════════════════════════════════════════════════════╗
+║         RESUME RANKING SYSTEM - QUICK START GUIDE          ║
+╚══════════════════════════════════════════════════════════════╝
+
+🚀 HOW TO RUN (Just One Click!):
+
+   Option 1: Double-click → RUN_ME.bat
+   (Interactive - Press any key to proceed)
+
+   Option 2: Double-click → RUN_AUTO.bat
+   (Fully automatic - Runs and closes automatically)
+
+
+📊 WHAT HAPPENS:
+
+   ✓ System analyzes job description
+   ✓ Compares with all resumes
+   ✓ Calculates similarity scores using AI/ML
+   ✓ Ranks candidates automatically
+   ✓ Saves results to rankings_output.csv
+
+
+📁 OUTPUT:
+
+   Results saved in: rankings_output.csv
+   Format: Rank, Resume Name, Score, Percentage
+
+
+🎯 THAT'S IT! No installation, no setup, just click and run!
+
+
+───────────────────────────────────────────────────────────────
+
+📝 To Use Your Own Data:
+
+   1. Replace data/job_description.txt with your job posting
+   2. Add your resume files (.txt format) to data/resumes/
+   3. Double-click RUN_ME.bat or RUN_AUTO.bat again
+
+
+───────────────────────────────────────────────────────────────
+
+Project Location: C:\Users\krris\resume_ranker\
+
+Date: March 2026
+B.Tech AI/ML Academic Project - Resume Ranking System
