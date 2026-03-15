@@ -1,13 +1,13 @@
 """
 Resume Ranker Module
-Integrates all components to rank resumes based on job description similarity.
+Simple implementation for ranking resumes using TF-IDF + cosine similarity.
 """
 
 import os
+import re
 import pandas as pd
-from .preprocess import TextPreprocessor
-from .vectorizer import DocumentVectorizer
-from .similarity import SimilarityCalculator
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 
 
 class ResumeRanker:
@@ -17,13 +17,17 @@ class ResumeRanker:
     
     def __init__(self):
         """Initialize resume ranker."""
-        self.preprocessor = TextPreprocessor()
-        self.vectorizer = DocumentVectorizer()
-        self.similarity_calculator = SimilarityCalculator()
-        
         self.job_description = None
         self.resumes = {}
         self.rankings = None
+
+    @staticmethod
+    def _clean_text(text):
+        """Basic cleaning to keep processing easy to explain in viva."""
+        text = text.lower()
+        text = re.sub(r'[^a-z\s]', ' ', text)
+        text = re.sub(r'\s+', ' ', text).strip()
+        return text
     
     def load_job_description(self, file_path):
         """Load job description from file."""
@@ -39,14 +43,15 @@ class ResumeRanker:
         """Load all resume files from folder."""
         if not os.path.exists(resume_folder):
             raise FileNotFoundError(f"Resume folder not found: {resume_folder}")
-        
-        # Get all text files in the folder
-        resume_files = [f for f in os.listdir(resume_folder) if f.endswith('.txt')]
+
+        resume_files = sorted(
+            filename for filename in os.listdir(resume_folder) if filename.endswith('.txt')
+        )
         
         if not resume_files:
             raise ValueError(f"No .txt resume files found in {resume_folder}")
         
-        # Load each resume
+        self.resumes = {}
         for resume_file in resume_files:
             file_path = os.path.join(resume_folder, resume_file)
             with open(file_path, 'r', encoding='utf-8') as f:
@@ -62,46 +67,35 @@ class ResumeRanker:
         if not self.resumes:
             raise ValueError("No resumes loaded. Call load_resumes() first.")
         
-        # Preprocess job description
-        print("Preprocessing job description...")
-        preprocessed_job = self.preprocessor.clean_text(self.job_description)
-        
-        # Preprocess all resumes
-        print(f"Preprocessing {len(self.resumes)} resumes...")
+        print("Cleaning text...")
+        cleaned_job = self._clean_text(self.job_description)
         resume_names = list(self.resumes.keys())
-        resume_texts = list(self.resumes.values())
-        preprocessed_resumes = self.preprocessor.preprocess_documents(resume_texts)
+        cleaned_resumes = [self._clean_text(self.resumes[name]) for name in resume_names]
         
-        # Create TF-IDF vectors
         print("Creating TF-IDF vectors...")
-        all_documents = [preprocessed_job] + preprocessed_resumes
-        tfidf_matrix = self.vectorizer.fit_transform(all_documents)
+        all_documents = [cleaned_job] + cleaned_resumes
+        vectorizer = TfidfVectorizer(stop_words='english')
+        tfidf_matrix = vectorizer.fit_transform(all_documents)
         
-        # Separate job description vector from resume vectors
-        job_vector = tfidf_matrix[0]
+        job_vector = tfidf_matrix[0:1]
         resume_vectors = tfidf_matrix[1:]
         
-        # Calculate similarities
         print("Calculating similarity scores...")
-        similarities = self.similarity_calculator.calculate_similarities(
-            job_vector, resume_vectors
-        )
-        
-        # Create results dataframe
-        results = []
-        for resume_name, similarity_score in zip(resume_names, similarities):
-            results.append({
-                'Resume': resume_name,
-                'Similarity Score': round(similarity_score, 4),
-                'Percentage': f"{round(similarity_score * 100, 2)}%"
-            })
-        
-        # Create DataFrame and sort by similarity score
-        self.rankings = pd.DataFrame(results)
-        self.rankings = self.rankings.sort_values('Similarity Score', ascending=False)
-        self.rankings['Rank'] = range(1, len(self.rankings) + 1)
-        
-        # Reorder columns
+        similarities = cosine_similarity(job_vector, resume_vectors).flatten()
+
+        rows = [
+            {
+                'Resume': name,
+                'Similarity Score': round(score, 4),
+                'Percentage': f"{round(score * 100, 2)}%"
+            }
+            for name, score in zip(resume_names, similarities)
+        ]
+
+        self.rankings = pd.DataFrame(rows).sort_values(
+            by='Similarity Score', ascending=False
+        ).reset_index(drop=True)
+        self.rankings['Rank'] = self.rankings.index + 1
         self.rankings = self.rankings[['Rank', 'Resume', 'Similarity Score', 'Percentage']]
         
         return self.rankings
@@ -124,16 +118,16 @@ class ResumeRanker:
         if self.rankings is None:
             raise ValueError("Rankings not computed yet. Call rank_resumes() first.")
         
-        print("\n" + "="*70)
-        print("RESUME RANKING RESULTS".center(70))
-        print("="*70 + "\n")
+        print("\n" + "="*60)
+        print("Resume Ranking Results")
+        print("="*60 + "\n")
         
         for _, row in self.rankings.iterrows():
             print(f"Rank {row['Rank']}: {row['Resume']}")
             print(f"  Similarity Score: {row['Similarity Score']} ({row['Percentage']})")
             print()
         
-        print("="*70)
+        print("="*60)
     
     def save_rankings(self, output_file):
         """
@@ -144,17 +138,5 @@ class ResumeRanker:
         """
         if self.rankings is None:
             raise ValueError("Rankings not computed yet. Call rank_resumes() first.")
-        
+
         self.rankings.to_csv(output_file, index=False)
-        print(f"\nRankings saved to: {output_file}")
-
-
-if __name__ == "__main__":
-    # Test the ranker module
-    print("Testing Resume Ranker Module...")
-    
-    ranker = ResumeRanker()
-    
-    # This is just a test - actual paths will be provided by main.py
-    print("\nNote: This is a test module.")
-    print("Use main.py to run the complete resume ranking system.")
